@@ -1,11 +1,33 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  justify-content:center;
+  width: 100%;
 }
 
 * {
   box-sizing: border-box;
 }
 .hjedna{
-  background-color: black;
+  background-color: #074896;
   color: white;
+
+}
+
+.nadpis{
+  width: 100%; 
+  text-align: center;
+  background-color: #ff8800;
+  color: white;
+  margin: 0.8%;
+}
+
+.reserveBtn{
+  border: none;
+  color: white;
+  background-color: #ff8800;
+}
+#root{
+  text-align: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

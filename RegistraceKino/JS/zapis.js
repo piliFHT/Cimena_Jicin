@@ -1,4 +1,3 @@
-let root = document.getElementById("root");
 
 let poleSedadel = [
     { sedadlo: "A1", rezervace: false },
@@ -57,17 +56,33 @@ let poleSedadel = [
     { sedadlo: "I6", rezervace: false }
 ]
 
+
 function generateTableHTML() {
-     
-    return poleSedadel.map((x, index) => `<p class="hjedna">${x.sedadlo}</p><br/>
-        <button onClick="reserve(${index})">${x.rezervace}</button>`
-    );
+    let tableHTML = "<table>";
+    
+    
+    poleSedadel.forEach((x, index) => {
+        
+        if (index % 6 === 0) {
+            if (index !== 0) {
+                tableHTML += "</tr>";
+            }
+            tableHTML += "<tr>";
+        }
+        let backgroundColor = x.rezervace ? "red" : ""; 
+        tableHTML += `<td><p class="hjedna">${x.sedadlo}</p><button class="reserveBtn" id="id${index}" style="background-color: ${backgroundColor}" onClick="reserve(${index})">${x.rezervace}</button></td>`;
+        
+    });
+    tableHTML += "</tr></table>";
+    return tableHTML;
+
 }
 function reserve(index) {
     poleSedadel[index].rezervace = !poleSedadel[index].rezervace;
-    root.innerHTML = generateTableHTML(); // Update table after reservation
-    
+    root.innerHTML = generateTableHTML();
 }
 
+
+let root = document.getElementById("root");
 
 root.innerHTML = generateTableHTML();
