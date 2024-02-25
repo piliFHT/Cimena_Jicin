@@ -58,11 +58,9 @@ let poleSedadel = [
 
 
 function generateTableHTML() {
-    let tableHTML = "<table>";
-    
+    let tableHTML = "<table class='tableHTML'";
     
     poleSedadel.forEach((x, index) => {
-        
         if (index % 6 === 0) {
             if (index !== 0) {
                 tableHTML += "</tr>";
@@ -70,19 +68,79 @@ function generateTableHTML() {
             tableHTML += "<tr>";
         }
         let backgroundColor = x.rezervace ? "red" : ""; 
-        tableHTML += `<td><p class="hjedna">${x.sedadlo}</p><button class="reserveBtn" id="id${index}" style="background-color: ${backgroundColor}" onClick="reserve(${index})">${x.rezervace}</button></td>`;
         
+        tableHTML += `<td><button class="reserveBtn btn my-2" id="id${index}" style="background-color: ${backgroundColor};" onClick="reserve(${index})">${x.sedadlo}</button></td>`;
     });
     tableHTML += "</tr></table>";
     return tableHTML;
-
 }
+
 function reserve(index) {
     poleSedadel[index].rezervace = !poleSedadel[index].rezervace;
     root.innerHTML = generateTableHTML();
 }
 
+document.getElementById("resBtn").onclick = () => {
+    saveToLocalStorage(poleSedadel);
+    root.innerHTML = generateTableHTML();
+}
+// Function to save data to local storage
+function saveToLocalStorage(data) {
+    localStorage.setItem(document.getElementById("selFil").value, JSON.stringify(data));
+   
+}
+
+// Function to load data from local storage
+function loadFromLocalStorage() {
+    const storedData = localStorage.getItem(document.getElementById("selFil").value);
+    if (storedData) {
+        poleSedadel = JSON.parse(storedData);
+    }
+}
+
+function generateDifferentReservation() {
+    // For now, let's just reset all reservations
+    poleSedadel.forEach(seat => seat.rezervace = false);
+    location.reload();
+    root.innerHTML = generateTableHTML();
+}
+
+//let selectedFilm = 
+
+function handleFilmSelection() {
+    selectFilm.value;
+    
+    generateDifferentReservation();
+
+    // You can add specific logic for each film here
+    switch (selectedFilm) {
+        case "Top Gun: Maverick":
+            loadFromLocalStorage();
+            break;
+        case "Le Mans":
+            loadFromLocalStorage();
+            break;
+        case "Fight Club":
+            loadFromLocalStorage();
+            break;
+        default:
+            break;
+    }
+}
+
+function handleReservation() {
+    
+}
 
 let root = document.getElementById("root");
 
+loadFromLocalStorage();
+
 root.innerHTML = generateTableHTML();
+
+let selectFilm = document.getElementById("selFil");
+selectFilm.addEventListener("change", handleFilmSelection);
+
+// Add event listener for the reservation button
+let reserveBtn = document.getElementById("resBtn");
+reserveBtn.addEventListener("click", handleReservation);

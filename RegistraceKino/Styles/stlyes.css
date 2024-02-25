@@ -1,33 +1,57 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  display: grid;
+  display: flex;
+  align-items: center;
+  text-align: center;
   justify-content:center;
+  flex-direction: column;
   width: 100%;
+  background-color: #7b7b7b;
 }
 
 * {
   box-sizing: border-box;
 }
 .hjedna{
-  background-color: #074896;
+  background-color: #2d333b;
   color: white;
 
 }
 
 .nadpis{
-  width: 100%; 
+  height: auto;
   text-align: center;
-  background-color: #ff8800;
+  background-color: #646464;
   color: white;
-  margin: 0.8%;
+  width: 25%;
+  margin: 2%;
 }
 
 .reserveBtn{
   border: none;
   color: white;
-  background-color: #ff8800;
+  background-color: #58544e;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 40%;
+  width: 100%;
 }
 #root{
   text-align: center;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.resBtn{
+  width: auto;
+  background-color:#646464;
+  color: white;
+  border: hidden;
+  transition: ease-in-out 0.15s;
+  font-weight: bold;
+}
+.resBtn:hover{
+  transition: ease-in-out 0.15s;
+  border: 2px solid #58544e;
+}
+.selFil{
+  margin-top: 10%;
 }
