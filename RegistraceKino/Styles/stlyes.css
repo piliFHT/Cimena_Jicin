@@ -33,11 +33,18 @@ body {
   background-color: #58544e;
   border-top-left-radius: 40%;
   border-top-right-radius: 40%;
-  width: 100%;
+  width: 250px;
+  height: auto;
+  
 }
 #root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 100%;
 }
 
 .resBtn{
