@@ -105,7 +105,7 @@ function reserve(index) {
       seat.rezervace.name = "";
       seat.rezervace.email = "";
     }else{
-        alert("Prdel");
+        alert("Toto sedadlo je již obsazené!");
     }
 
     root.innerHTML = generateTableHTML();
