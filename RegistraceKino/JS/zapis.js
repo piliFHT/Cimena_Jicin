@@ -110,15 +110,14 @@ function reserve(index) {
 
     root.innerHTML = generateTableHTML();
   }
-  // poleSedadel[index].rezervace = !poleSedadel[index].rezervace;
-  // root.innerHTML = generateTableHTML();
+  
 }
 
 document.getElementById("resBtn").onclick = () => {
   saveToLocalStorage(poleSedadel);
   root.innerHTML = generateTableHTML();
 };
-// Function to save data to local storage
+
 function saveToLocalStorage(data) {
   localStorage.setItem(
     document.getElementById("selFil").value,
@@ -126,7 +125,7 @@ function saveToLocalStorage(data) {
   );
 }
 
-// Function to load data from local storage
+
 function loadFromLocalStorage() {
   const storedData = localStorage.getItem(
     document.getElementById("selFil").value
@@ -137,38 +136,23 @@ function loadFromLocalStorage() {
 }
 
 function generateDifferentReservation() {
-  // For now, let's just reset all reservations
+ 
   poleSedadel.forEach(
     (seat) => (seat.rezervace = { occupied: false, name: "", email: "" })
   );
-  location.reload();
+  loadFromLocalStorage();
   root.innerHTML = generateTableHTML();
 }
 
-//let selectedFilm =
+
 
 function handleFilmSelection() {
   selectFilm.value;
 
   generateDifferentReservation();
-
-  // You can add specific logic for each film here
-  switch (selectedFilm) {
-    case "Top Gun: Maverick":
-      loadFromLocalStorage();
-      break;
-    case "Le Mans":
-      loadFromLocalStorage();
-      break;
-    case "Fight Club":
-      loadFromLocalStorage();
-      break;
-    default:
-      break;
-  }
 }
 
-function handleReservation() {}
+
 
 let root = document.getElementById("root");
 
@@ -179,6 +163,3 @@ root.innerHTML = generateTableHTML();
 let selectFilm = document.getElementById("selFil");
 selectFilm.addEventListener("change", handleFilmSelection);
 
-// Add event listener for the reservation button
-let reserveBtn = document.getElementById("resBtn");
-reserveBtn.addEventListener("click", handleReservation);
