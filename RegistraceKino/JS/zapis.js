@@ -76,13 +76,13 @@ function generateTableHTML() { //funkce na generování sedadel v kině
     } else {
       let penize = 0; //proměnná peníze, která se vypisuje částku za film
       switch(document.getElementById("selFil").value){ //switch, který mění vypsanou částku za film, podle selectu
-        case "Top Gun: Maverick - 250kč":
+        case "Top Gun: Maverick":
           penize = 250
           break;
-        case "Le Mans - 300kč":
+        case "Le Mans":
           penize = 300
           break;
-        case "Fight Club - 180Kč":
+        case "Fight Club":
           penize = 180
           break;
       }
