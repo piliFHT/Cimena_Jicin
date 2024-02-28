@@ -17,17 +17,14 @@
   <body>
     <!-- Registrace vstupenek do kina ==> do 29.2.2024, žádná DB, pouze lokální data (local storage prohlížeče) GUI kinosálu ==> clickable židle, HTML, CSS(Bootstrap), JS -->
     <div>
-        <select name="films" id="selFil" class="selFil form-control">
-            <option>
-                Top Gun: Maverick
-            </option>
-            <option>
-                Le Mans
-            </option>
-            <option>
-                Fight Club
-            </option>
-        </select>
+      <select name="films" id="selFil" class="selFil form-control">
+        <option>Top Gun: Maverick - 08:15</option>
+        <option>Le Mans - 11:00</option>
+        <option>Fight Club - 13:45</option>
+        <option>Top Gun: Maverick - 16:15</option>
+        <option>Le Mans - 18:45</option>
+        <option>Fight Club - 21:15</option>
+      </select>
     </div>
 
     <div class="nadpis rounded">
@@ -38,15 +35,12 @@
 
     <form class="form-group">
       <label for="nameInput">Jméno:</label>
-      <input id="nameInput" class="form-control" type="text">
+      <input id="nameInput" class="form-control" type="text" />
       <label for="emailInput">Příjmení:</label>
-      <input id="emailInput" type="text" class="form-control" required>
-
+      <input id="emailInput" type="text" class="form-control" required />
     </form>
 
-    <button id="resBtn" class="resBtn btn my-2">
-        Rezervovat
-    </button>
+    <button id="resBtn" class="resBtn btn my-2">Rezervovat</button>
   </body>
   <script src="JS/zapis.js"></script>
 </html>

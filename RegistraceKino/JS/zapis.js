@@ -76,14 +76,23 @@ function generateTableHTML() { //funkce na generování sedadel v kině
     } else {
       let penize = 0; //proměnná peníze, která se vypisuje částku za film
       switch(document.getElementById("selFil").value){ //switch, který mění vypsanou částku za film, podle selectu
-        case "Top Gun: Maverick":
-          penize = 250
+        case "Top Gun: Maverick - 08:15":
+          penize = 220;
           break;
-        case "Le Mans":
-          penize = 300
+        case "Le Mans - 11:00":
+          penize = 200;
           break;
-        case "Fight Club":
-          penize = 180
+        case "Fight Club - 13:45":
+          penize = 180;
+          break;
+        case "Top Gun: Maverick - 16:15":
+          penize = 250;
+          break;
+        case "Le Mans - 18:45":
+          penize = 230;
+          break;
+        case "Fight Club - 21:15":
+          penize = 140;
           break;
       }
       buttonText += `<br/>Volné sedadlo<br/>${penize}Kč`; //pokud není registrované, je v základu
