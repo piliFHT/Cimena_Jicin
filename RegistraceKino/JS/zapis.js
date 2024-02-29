@@ -136,6 +136,7 @@ function reserve(index) {
 document.getElementById("resBtn").onclick = () => { //funkce on click na buttonu s ID "resBtn" --> reserve button
   saveToLocalStorage(poleSedadel); //uloží data, do localStorage - uloží stav ve kterém je poleSedadel
   root.innerHTML = generateTableHTML(); //aktualizuje pole
+  alert("Místa rezervována!")
 };
 
 function saveToLocalStorage(data) { //funkce na ukládání dat (data = data, které bychom chtěli uložit --> poleSedadel)
