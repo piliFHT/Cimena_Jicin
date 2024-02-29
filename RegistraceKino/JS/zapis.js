@@ -1,61 +1,61 @@
 let nameInput = document.getElementById("nameInput"); //dostávám element s ID "nameInput"
-let emailInput = document.getElementById("emailInput"); //dostávám element s ID "nameInput" | emailInput původně sloužil pro Email, po dokončení kódu změna email na příjmení --> nebudu to měnit
+let surnameInput = document.getElementById("surnameInput"); //dostávám element s ID "surnameInput" 
 
 let poleSedadel = [
-  { sedadlo: "A1", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "A2", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "A3", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "A4", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "A5", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "A6", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "B1", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "B2", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "B3", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "B4", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "B5", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "B6", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "C1", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "C2", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "C3", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "C4", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "C5", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "C6", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "D1", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "D2", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "D3", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "D4", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "D5", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "D6", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "E1", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "E2", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "E3", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "E4", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "E5", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "E6", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "F1", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "F2", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "F3", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "F4", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "F5", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "F6", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "G1", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "G2", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "G3", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "G4", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "G5", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "G6", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "H1", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "H2", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "H3", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "H4", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "H5", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "H6", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "I1", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "I2", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "I3", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "I4", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "I5", rezervace: { occupied: false, name: "", email: "" } },
-  { sedadlo: "I6", rezervace: { occupied: false, name: "", email: "" } },
+  { sedadlo: "A1", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "A2", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "A3", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "A4", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "A5", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "A6", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "B1", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "B2", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "B3", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "B4", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "B5", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "B6", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "C1", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "C2", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "C3", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "C4", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "C5", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "C6", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "D1", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "D2", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "D3", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "D4", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "D5", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "D6", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "E1", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "E2", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "E3", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "E4", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "E5", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "E6", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "F1", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "F2", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "F3", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "F4", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "F5", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "F6", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "G1", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "G2", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "G3", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "G4", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "G5", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "G6", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "H1", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "H2", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "H3", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "H4", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "H5", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "H6", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "I1", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "I2", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "I3", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "I4", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "I5", rezervace: { occupied: false, name: "", surname: "" } },
+  { sedadlo: "I6", rezervace: { occupied: false, name: "", surname: "" } },
 ]; //pole pro výpis sedadel
 
 
@@ -72,7 +72,7 @@ function generateTableHTML() { //funkce na generování sedadel v kině
     let backgroundColor = x.rezervace.occupied ? "red" : ""; //if podmínka, která určuje pokud je sedadlo kliknté, změní barvu pozadí
     let buttonText = x.sedadlo;
     if (x.rezervace.occupied) {
-      buttonText += `<br/>${x.rezervace.name}<br/>${x.rezervace.email}`; //výpis registrovaného jména a emailu na sedadlo (button)
+      buttonText += `<br/>${x.rezervace.name}<br/>${x.rezervace.surname}`; //výpis registrovaného jména a emailu na sedadlo (button)
     } else {
       let penize = 0; //proměnná peníze, která se vypisuje částku za film
       switch(document.getElementById("selFil").value){ //switch, který mění vypsanou částku za film, podle selectu
@@ -108,22 +108,22 @@ function reserve(index) {
   const seat = poleSedadel[index]; //proměnná seat, která bere jednotlivé prvky poleSedadel pomocí indexu
   if (!seat.rezervace.occupied) { //pokud seat.rezervace.occupied není v základním tvaru (Základní tvar --> (false,"",""))
     const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    if (name != "" && email != "") {
+    const surname = surnameInput.value.trim();
+    if (name != "" && surname != "") {
       seat.rezervace.occupied = true; //změní false na true --> obsazeno
       seat.rezervace.name = name; //doplní jméno do rezervace v poli
-      seat.rezervace.email = email; //doplní email do rezervace v poli
+      seat.rezervace.surname = surname; //doplní surname do rezervace v poli
       root.innerHTML = generateTableHTML(); //vygeneruje znovu pole, ale aktualizované
     } else {
-      alert("Vyplňte prosím všechna povinná pole!"); //alert
+      alert("Vyplňte prosím všechna povinná pole! ('*' značí povinné pole)"); //alert
     }
   } else {
     const name = nameInput.value.trim(); //proměnná pro osekaný nameInput
-    const email = emailInput.value.trim(); //proměnná pro osekaný emailInput
-    if (name == seat.rezervace.name && email == seat.rezervace.email) { //kontroluje, zdali je zadaný email stejný, jako uložený email. Poté můžete zrušit rezervaci
+    const surname = surnameInput.value.trim(); //proměnná pro osekaný surnameInput
+    if (name == seat.rezervace.name && surname == seat.rezervace.surname) { //kontroluje, zdali je zadaný surname stejný, jako uložený surname. Poté můžete zrušit rezervaci
       seat.rezervace.occupied = false; //vrácení rezervovaného (true) sedadla na nerezervované (false)
       seat.rezervace.name = ""; //Vymazání name v rezervaci
-      seat.rezervace.email = ""; //Vymazání email v rezervaci
+      seat.rezervace.surname = ""; //Vymazání surname v rezervaci
     }else{
         alert("Toto sedadlo je již obsazené!"); //alert
     }
@@ -158,7 +158,7 @@ function loadFromLocalStorage() { //načítání z localStorage
 function generateDifferentReservation() { //funkce pro nastavení pole do původní stavu
  
   poleSedadel.forEach( //projede celé poleSedadel a přepíše rezervace:.. na původní stav -> (false, "", "")
-    (seat) => (seat.rezervace = { occupied: false, name: "", email: "" }) //nastavení rezervace:.. na (false, "", "")
+    (seat) => (seat.rezervace = { occupied: false, name: "", surname: "" }) //nastavení rezervace:.. na (false, "", "")
   );
   loadFromLocalStorage(); //volání funkce na načtení z databáze --> načte po přepsání na původní stav --> žádná kolize mezi uloženými sedadly
   root.innerHTML = generateTableHTML(); //aktualizuje pole

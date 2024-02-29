@@ -23,7 +23,7 @@ body {
   text-align: center;
   background-color: #646464;
   color: white;
-  width: 25%;
+  width: 75%;
   margin: 2%;
 }
 
@@ -33,7 +33,8 @@ body {
   background-color: #58544e;
   border-top-left-radius: 40%;
   border-top-right-radius: 40%;
-  width: 250px;
+  width: fit-content;
+  min-width: 250px;
   height: auto;
   
 }
