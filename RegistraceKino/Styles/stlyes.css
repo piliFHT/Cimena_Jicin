@@ -6,7 +6,7 @@ body {
   justify-content:center;
   flex-direction: column;
   width: 100%;
-  background-color: #7b7b7b;
+  background-color: #F7B39F;
 }
 
 * {
@@ -21,7 +21,7 @@ body {
 .nadpis{
   height: auto;
   text-align: center;
-  background-color: #646464;
+  background-color: #FA9579;
   color: white;
   width: 75%;
   margin: 2%;
@@ -29,8 +29,8 @@ body {
 
 .reserveBtn{
   border: none;
-  color: white;
-  background-color: #58544e;
+  color: #403D58;
+  background-color: #FC7753;
   border-top-left-radius: 40%;
   border-top-right-radius: 40%;
   width: fit-content;
@@ -50,15 +50,16 @@ body {
 
 .resBtn{
   width: auto;
-  background-color:#646464;
-  color: white;
+  background-color:#FA9579;
+  color: #403D58;
   border: hidden;
   transition: ease-in-out 0.15s;
   font-weight: bold;
 }
 .resBtn:hover{
   transition: ease-in-out 0.15s;
-  border: 2px solid #58544e;
+  color: #403D58;
+  border: 2px solid #d66646;
 }
 .selFil{
   margin-top: 10%;

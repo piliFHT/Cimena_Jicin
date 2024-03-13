@@ -69,7 +69,8 @@ function generateTableHTML() { //funkce na generování sedadel v kině
       }
       tableHTML += "<tr>";
     }
-    let backgroundColor = x.rezervace.occupied ? "red" : ""; //if podmínka, která určuje pokud je sedadlo kliknté, změní barvu pozadí
+    let backgroundColor = x.rezervace.occupied ? "#F8333C" : ""; //if podmínka, která určuje pokud je sedadlo kliknté, změní barvu pozadí
+    let color = x.rezervace.occupied ? "#66D7D1" : "";
     let buttonText = x.sedadlo;
     if (x.rezervace.occupied) {
       buttonText += `<br/>${x.rezervace.name}<br/>${x.rezervace.surname}`; //výpis registrovaného jména a emailu na sedadlo (button)
@@ -98,7 +99,7 @@ function generateTableHTML() { //funkce na generování sedadel v kině
       buttonText += `<br/>Volné sedadlo<br/>${penize}Kč`; //pokud není registrované, je v základu
     }
 
-    tableHTML += `<td><button class="reserveBtn btn my-2" id="id${index}" style="background-color: ${backgroundColor};" onClick="reserve(${index})">${buttonText}</button></td>`; //výpis jednotlivých buttonu z pole pomocí forEach
+    tableHTML += `<td><button class="reserveBtn btn my-2" id="id${index}" style="background-color: ${backgroundColor}; color: ${color};" onClick="reserve(${index})">${buttonText}</button></td>`; //výpis jednotlivých buttonu z pole pomocí forEach
   });
   tableHTML += `</tr></table>`;
   return tableHTML;
@@ -140,19 +141,19 @@ document.getElementById("resBtn").onclick = () => { //funkce on click na buttonu
 };
 
 function saveToLocalStorage(data) { //funkce na ukládání dat (data = data, které bychom chtěli uložit --> poleSedadel)
-  localStorage.setItem( //setItem ukládá do localStorage
-    document.getElementById("selFil").value, //klíč k uložení, je název filmu
-    JSON.stringify(data) //stringify převede hodnotu na JS Object Notation - JSON
+  localStorage.setItem( //setItem ukládá do localStorage(klíč, co)
+    document.getElementById("selFil").value, //klíč k uložení, je název filmu - nebo-li value selectu filmu
+    JSON.stringify(data) //stringify převede poleSedadel (data) na text a uloží
   );
 }
 
 
 function loadFromLocalStorage() { //načítání z localStorage
-  const storedData = localStorage.getItem( //getItem načítá z localStorage
+  const storedData = localStorage.getItem( //getItem načítá z localStorage klíč
     document.getElementById("selFil").value //načítáme pomocí uloženého klíče
   );
-  if (storedData) {
-    poleSedadel = JSON.parse(storedData); //parsuje JSON --> konstruuje JS objekt
+  if (storedData) {//pokud existují uložená data
+    poleSedadel = JSON.parse(storedData); //načte poleSedadel podle uložených dat
   }
 }
 
